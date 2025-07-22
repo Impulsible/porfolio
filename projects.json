@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Faces and places of lagos",
+    "description": "A modern personal portfolio website built with HTML, CSS, and JS.",
+    "image": "images/view.avif",
+    "link": "https://github.com/your-github/portfolio"
+  },
+  {
+    "title": "Naija Snacks",
+    "description": "High-converting product landing page with responsive design.",
+    "image": "images/photo.png",
+    "link": "https://github.com/your-github/landing-page"
+  },
+  {
+    "title": "Chamber of Commerce",
+    "description": "A fully interactive image gallery with animations and lightbox effects.",
+    "image": "images/premium4.avif",
+    "link": "https://github.com/your-github/gallery"
+  }
+]
