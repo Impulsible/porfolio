@@ -526,7 +526,6 @@ footer {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
-
 /* Navigation Base */
 .site-header {
   display: flex;
@@ -550,13 +549,13 @@ footer {
 }
 
 .name {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: var(--text-light);
 }
 
 .tagline {
-  font-size: 0rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
