@@ -526,7 +526,9 @@ footer {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
+
 /* Navigation Base */
+/* Base layout */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -548,15 +550,19 @@ footer {
   text-align: left;
 }
 
-.name {
-  font-size: 1.2rem;
-  font-weight: bold;
+/* Updated name and tagline styles */
+.logo-text .name {
+  font-weight: 600;
+  font-size: 1.8rem;
   color: var(--text-light);
+  font-family: 'Great Vibes', cursive; /* or another cursive font */
 }
 
-.tagline {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+.logo-text .tagline {
+  font-style: italic;
+  font-size: 0.5rem;
+  color: var(--text-light);
+  opacity: 0.8;
 }
 
 /* Hamburger default hidden */
