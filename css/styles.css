@@ -526,8 +526,6 @@ footer {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
-
-/* Navigation Base */
 /* Base layout */
 .site-header {
   display: flex;
@@ -550,12 +548,11 @@ footer {
   text-align: left;
 }
 
-/* Updated name and tagline styles */
 .logo-text .name {
   font-weight: 600;
   font-size: 1.8rem;
   color: var(--text-light);
-  font-family: 'Great Vibes', cursive; /* or another cursive font */
+  font-family: 'Great Vibes', cursive;
 }
 
 .logo-text .tagline {
@@ -606,16 +603,16 @@ footer {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
     width: 100%;
+    z-index: 999;
     background: linear-gradient(to bottom, #111, #1a1a1a);
     padding: 1.5rem;
     border-bottom: 2px solid var(--primary-color);
     border-radius: 0 0 12px 12px;
     box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
-    animation: slideDown 0.3s ease-out forwards;
-    overflow-x: hidden;
+    animation: slideDownFromTop 0.3s ease-out forwards;
   }
 
   .nav-links.show {
@@ -646,15 +643,14 @@ footer {
   }
 }
 
-/* Slide down animation */
-@keyframes slideDown {
+/* Slide from top animation */
+@keyframes slideDownFromTop {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-100%);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
