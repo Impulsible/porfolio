@@ -32,7 +32,8 @@
   <script src="script/main.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
+ <!-- HEADER -->
+<header class="site-header">
   <div class="logo">
     <img src="images/logo.png" alt="Henry's Logo" class="logo-img" width="50" height="50" loading="lazy">
     <div class="logo-text">
@@ -41,15 +42,20 @@
     </div>
   </div>
 
+  <!-- Hamburger for mobile -->
   <button id="menuToggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">☰</button>
 
-  <ul class="nav-links" id="navMenu">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+  <!-- Navigation menu: always visible on desktop, toggled on mobile -->
+  <nav class="nav-wrapper">
+    <ul class="nav-links" id="navMenu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
+
 
   <main>
     <!-- Hero Section -->
