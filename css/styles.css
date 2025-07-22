@@ -82,11 +82,9 @@ h2::after {
 /* Name Styling */
 .logo-text .name {
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: var(--text-light);
-  font-family: 'Great Vibes', cursive;
 }
-
 
 /* Italic Subheading */
 .logo-text .tagline {
@@ -525,6 +523,40 @@ footer {
   height: auto;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Navigation Base */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--bg-dark);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-text {
+  text-align: left;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.tagline {
+  font-size: 0rem;
+  color: var(--text-muted);
 }
 
 /* Hamburger default hidden */
