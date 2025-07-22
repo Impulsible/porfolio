@@ -528,18 +528,38 @@ footer {
 
 /* Navigation Base */
 .site-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-color: var(--bg-dark);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0, 255, 255, 0.05);
+  background: var(--bg-dark);
+  position: relative;
+  overflow-x: hidden;
 }
 
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-text {
+  text-align: left;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Hamburger default hidden */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -550,29 +570,27 @@ footer {
   z-index: 1100;
 }
 
+/* Nav menu desktop */
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   list-style: none;
-}
-
-.nav-links li {
   margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   color: var(--text-light);
-  font-weight: 600;
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
   color: var(--primary-color);
 }
 
-/* ======= Mobile Dropdown ======= */
+/* Mobile styles */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -581,17 +599,17 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: linear-gradient(to bottom, #111, #1a1a1a);
-    padding: 1.5rem;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+    background: linear-gradient(to bottom, #111, #1a1a1a);
+    padding: 1.5rem;
     border-bottom: 2px solid var(--primary-color);
     border-radius: 0 0 12px 12px;
-    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
     animation: slideDown 0.3s ease-out forwards;
+    overflow-x: hidden;
   }
 
   .nav-links.show {
@@ -599,15 +617,15 @@ footer {
   }
 
   .nav-links li {
-    margin: 0.8rem 0;
+    margin: 0.75rem 0;
   }
 
   .nav-links a {
+    font-size: 1.1rem;
     color: var(--text-light);
-    font-weight: 600;
-    padding: 0.5rem 0;
-    display: block;
     border-left: 3px solid transparent;
+    padding-left: 0;
+    transition: all 0.3s ease;
   }
 
   .nav-links a:hover {
@@ -617,14 +635,19 @@ footer {
     padding-left: 0.75rem;
   }
 
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -1,18 +1,15 @@
 // ========== Hamburger Menu ==========
+ 
   document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
 
     menuToggle.addEventListener("click", () => {
       navMenu.classList.toggle("show");
-      menuToggle.classList.toggle("active");
-
-      const expanded = menuToggle.getAttribute("aria-expanded") === "true" || false;
+      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
       menuToggle.setAttribute("aria-expanded", !expanded);
     });
   });
-
-
 
 // ========== Last Modified Date ==========
 const lastModified = document.getElementById("lastModified");
