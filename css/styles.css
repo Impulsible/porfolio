@@ -526,7 +526,16 @@ footer {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Base layout */
+:root {
+  --bg-dark: #0d0d0d;
+  --primary-color: #00ffff;
+  --text-light: #ffffff;
+  --text-muted: #cccccc;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+/* Base Layout */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -534,125 +543,163 @@ footer {
   padding: 1rem 2rem;
   background: var(--bg-dark);
   position: relative;
+  z-index: 1000;
   overflow-x: hidden;
 }
 
-/* Logo styling */
+/* Logo Section */
 .logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.logo-text {
-  text-align: left;
-}
-
-/* Updated name and tagline styles */
 .logo-text .name {
   font-weight: 600;
   font-size: 1.8rem;
   color: var(--text-light);
-  font-family: 'Great Vibes', cursive; /* or another cursive font */
+  font-family: 'Great Vibes', cursive;
 }
 
 .logo-text .tagline {
   font-style: italic;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   color: var(--text-light);
   opacity: 0.8;
 }
 
-/* Hamburger default hidden */
+/* Root theme (optional if already defined) */
+:root {
+  --bg-dark: #0d0d0d;
+  --primary-color: #00ffff;
+  --text-light: #ffffff;
+  --text-muted: #cccccc;
+  --accent-red: #ff3366;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+/* === Basic Setup === */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  position: relative;
+  z-index: 999;
+}
+
+.nav-wrapper {
+  transition: max-height 0.3s ease;
+}
+
+/* === Hamburger Styles === */
 .hamburger {
   display: none;
-  font-size: 2rem;
+  flex-direction: column;
+  gap: 5px;
   background: none;
   border: none;
-  color: var(--primary-color);
   cursor: pointer;
-  z-index: 1100;
+  padding: 0.5rem;
 }
 
-/* Nav menu desktop */
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-.nav-links a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.nav-links a:hover {
-  color: var(--primary-color);
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
+/* === Mobile Nav Hidden by Default === */
+@media (max-width: 767px) {
   .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to bottom, #111, #1a1a1a);
-    padding: 1.5rem;
-    border-bottom: 2px solid var(--primary-color);
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
-    animation: slideDown 0.3s ease-out forwards;
-    overflow-x: hidden;
-  }
-
-  .nav-links.show {
     display: flex;
   }
 
-  .nav-links li {
-    margin: 0.75rem 0;
+  .nav-wrapper {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: var(--bg-dark);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .nav-wrapper.open {
+    max-height: 300px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    background-color: var(--bg-dark);
   }
 
   .nav-links a {
-    font-size: 1.1rem;
     color: var(--text-light);
-    border-left: 3px solid transparent;
-    padding-left: 0;
-    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.3s;
   }
 
   .nav-links a:hover {
     color: var(--primary-color);
-    border-left: 3px solid var(--primary-color);
-    background-color: rgba(0, 255, 255, 0.05);
-    padding-left: 0.75rem;
   }
 
-  html, body {
-    overflow-x: hidden;
+  .nav-links a.active {
+    color: var(--accent-red);
+    font-weight: bold;
   }
 }
 
-/* Slide down animation */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+/* === Desktop Nav === */
+@media (min-width: 768px) {
+  .nav-wrapper {
+    position: static;
+    max-height: none;
+    background: none;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+
+  .nav-links a {
+    color: var(--text-light);
+    font-family: var(--font-body);
+  }
+
+  .nav-links a.active {
+    color: var(--accent-red);
+  }
+
+  .nav-links a:hover {
+    color: var(--primary-color);
   }
 }
-

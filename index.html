@@ -182,5 +182,17 @@
     <p>&copy; 2025 Henry Osuagwu. All rights reserved. Made with ❤️ from Nigeria.</p>
     <p>Last Modified: <span id="lastModified">July 21, 2025</span></p>
   </footer>
+  <script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navWrapper = document.getElementById('navWrapper');
+
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.classList.toggle('active');
+    navWrapper.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+  });
+</script>
+
 </body>
 </html>
