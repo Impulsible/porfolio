@@ -1,13 +1,23 @@
 // ========== Hamburger Menu ==========
-  const menuToggle = document.getElementById('menuToggle');
-  const navWrapper = document.getElementById('navWrapper');
+const menuToggle = document.getElementById('menuToggle');
+const navWrapper = document.querySelector('.nav-wrapper');
+const navLinks = document.querySelectorAll('.nav-links a');
 
-  menuToggle.addEventListener('click', () => {
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.classList.toggle('active');
-    navWrapper.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', String(!expanded));
+menuToggle.addEventListener('click', () => {
+  const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.classList.toggle('active');
+  navWrapper.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(!expanded));
+});
+
+// Auto-close when a nav link is clicked
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navWrapper.classList.remove('open');
+    menuToggle.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
   });
+});
 
 
 // ========== Scroll to Top Button ==========
