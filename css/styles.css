@@ -529,6 +529,15 @@ footer {
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
+@media (max-width: 767px) {
+  .intro,
+  .intro * {
+    border: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
 
 /* ===== Hamburger ===== */
 .hamburger {
