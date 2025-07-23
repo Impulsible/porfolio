@@ -284,6 +284,20 @@ h2::after {
   opacity: 0.85;
 }
 
+.dynamic-featured {
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.project-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+}
+
+
 /* ========== Stats Section ========== */
 .stats-section {
   padding: 4rem 2rem;

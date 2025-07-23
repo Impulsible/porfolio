@@ -1,20 +1,24 @@
 // ========== Hamburger Menu ==========
-  const menuToggle = document.getElementById('menuToggle');
-  const navWrapper = document.getElementById('navWrapper');
+const menuToggle = document.getElementById('menuToggle');
+const navWrapper = document.getElementById('navWrapper');
 
-  menuToggle.addEventListener('click', () => {
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.classList.toggle('active');
-    navWrapper.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', String(!expanded));
-  });
+menuToggle.addEventListener('click', () => {
+  const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.classList.toggle('active');
+  navWrapper.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(!expanded));
+});
 
+// ========== Scroll to Top Button ==========
+const scrollBtn = document.getElementById("scrollTopBtn");
 
+window.addEventListener("scroll", () => {
+  scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});
 
-  document.getElementById('menuToggle').addEventListener('click', () => {
-    alert('Clicked!');
-  });
-
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 // ========== Last Modified Date ==========
 const lastModified = document.getElementById("lastModified");
@@ -76,19 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
   counters.forEach(counter => observer.observe(counter));
 });
 
-function checkStatsVisible() {
-  const statsSection = document.getElementById("stats");
-  if (!statsSection || hasAnimated) return;
-
-  const top = statsSection.getBoundingClientRect().top;
-  if (top < window.innerHeight) {
-    runStatCounters();
-    hasAnimated = true;
-  }
-}
-
-window.addEventListener("scroll", checkStatsVisible);
-
 // ========== Dynamic Project Loader ==========
 document.addEventListener("DOMContentLoaded", () => {
   fetch("projects.json")
@@ -99,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = document.createElement("div");
         card.className = "project-card";
         card.innerHTML = `
-          <img src="${project.image}" alt="${project.title}" loading="lazy" />
+          <img src="${project.image}" alt="${project.title}" loading="lazy">
           <h3>${project.title}</h3>
           <p>${project.description}</p>
           <a href="${project.link}" target="_blank" class="btn-secondary">View on GitHub</a>
@@ -108,14 +99,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
     .catch(error => console.error("Error loading projects:", error));
-});
-
-// Scroll-to-top functionality
-const scrollBtn = document.getElementById("scrollTopBtn");
-window.onscroll = () => {
-  scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-};
-
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
 });
