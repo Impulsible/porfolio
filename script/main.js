@@ -1,15 +1,21 @@
 // ========== Hamburger Menu ==========
- 
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
+  const menuToggle = document.getElementById('menuToggle');
+  const navWrapper = document.querySelector('.nav-wrapper');
 
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
-      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", !expanded);
-    });
+  menuToggle.addEventListener('click', () => {
+    navWrapper.classList.toggle('open');
+
+    // Update aria-expanded for accessibility
+    const isOpen = navWrapper.classList.contains('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
   });
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navWrapper.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', false);
+  });
+});
 
 // ========== Last Modified Date ==========
 const lastModified = document.getElementById("lastModified");
