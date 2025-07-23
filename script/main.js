@@ -5,9 +5,14 @@ const navLinks = document.querySelectorAll('.nav-links a');
 
 menuToggle.addEventListener('click', () => {
   const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  const isOpen = !expanded;
+
   menuToggle.classList.toggle('active');
   navWrapper.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(!expanded));
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+
+  // Lock or unlock scroll
+  document.body.classList.toggle('no-scroll', isOpen);
 });
 
 // Close menu when a nav link is clicked (mobile only)
@@ -17,6 +22,7 @@ navLinks.forEach(link => {
       navWrapper.classList.remove('open');
       menuToggle.classList.remove('active');
       menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('no-scroll'); // Unlock scroll
     }
   });
 });

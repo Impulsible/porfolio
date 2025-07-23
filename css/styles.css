@@ -145,14 +145,14 @@ h2::after {
   font-size: 2.2rem;
   color: var(--primary-color);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.2;
   margin-bottom: 1.2rem;
 }
 
 .intro {
   font-size: 1rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.4;
   margin-bottom: 1rem;
   text-align: justify;
 }
@@ -634,16 +634,6 @@ footer {
   color: var(--primary-color);
 }
 
-/* ===== MOBILE STYLES ===== */
-:root {
-  --bg-dark: #0d0d0d;
-  --primary-color: #00ffff;
-  --text-light: #ffffff;
-  --text-muted: #cccccc;
-  --accent-red: #ff3366;
-  --font-heading: 'Space Grotesk', sans-serif;
-  --font-body: 'Poppins', sans-serif;
-}
 
 /* ==== Header ==== */
 .site-header {
@@ -667,7 +657,7 @@ footer {
 
 .logo-text .name {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: var(--text-light);
   font-family: 'Great Vibes', cursive;
 }
@@ -772,4 +762,8 @@ footer {
     background-color: rgba(0, 255, 255, 0.1);
     border-radius: 5px;
   }
+}
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }
