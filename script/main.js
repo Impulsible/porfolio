@@ -9,12 +9,7 @@ menuToggle.addEventListener('click', () => {
   menuToggle.setAttribute('aria-expanded', String(!expanded));
 });
 
-// ========== Scroll to Top Button ==========
-const scrollBtn = document.getElementById("scrollTopBtn");
-
-window.addEventListener("scroll", () => {
-  scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-});
+// ========== Scroll to Top Button =========
 
 scrollBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
