@@ -1,12 +1,16 @@
 // ========== Hamburger Menu ==========
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
+ 
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('show');
-    hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
-  
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", !expanded);
+    });
+  });
+
 // ========== Last Modified Date ==========
 const lastModified = document.getElementById("lastModified");
 if (lastModified) {
