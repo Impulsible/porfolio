@@ -187,10 +187,10 @@
   const navWrapper = document.getElementById('navWrapper');
 
   menuToggle.addEventListener('click', () => {
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
     menuToggle.classList.toggle('active');
     navWrapper.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', String(!expanded));
+    menuToggle.setAttribute('aria-expanded', String(!isExpanded));
   });
 </script>
 
