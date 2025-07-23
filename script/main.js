@@ -10,15 +10,16 @@ menuToggle.addEventListener('click', () => {
   menuToggle.setAttribute('aria-expanded', String(!expanded));
 });
 
-// Auto-close when a nav link is clicked
+// Close menu when a nav link is clicked (mobile only)
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
-    navWrapper.classList.remove('open');
-    menuToggle.classList.remove('active');
-    menuToggle.setAttribute('aria-expanded', 'false');
+    if (window.innerWidth <= 768) {
+      navWrapper.classList.remove('open');
+      menuToggle.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
   });
 });
-
 
 // ========== Scroll to Top Button ==========
 const scrollBtn = document.getElementById("scrollTopBtn");
