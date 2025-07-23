@@ -1,5 +1,4 @@
 // ========== Hamburger Menu ==========
-
   const menuToggle = document.getElementById('menuToggle');
   const navWrapper = document.getElementById('navWrapper');
 
@@ -9,6 +8,13 @@
     navWrapper.classList.toggle('open');
     menuToggle.setAttribute('aria-expanded', String(!expanded));
   });
+
+
+
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    alert('Clicked!');
+  });
+
 
 // ========== Last Modified Date ==========
 const lastModified = document.getElementById("lastModified");

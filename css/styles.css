@@ -569,10 +569,19 @@ footer {
 }
 
 /* ===== Mobile Nav ===== */
+/* MOBILE NAV TOGGLE */
 @media (max-width: 767px) {
-  .hamburger {
-    display: flex;
+  .nav-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: var(--bg-dark); /* or your color */
   }
+
+  .nav-wrapper.open {
+    max-height: 300px;
+  }
+}
 
   .nav-wrapper {
     position: absolute;
@@ -616,7 +625,7 @@ footer {
     color: var(--accent-red);
     font-weight: bold;
   }
-}
+
 
 /* ===== Desktop Nav (untouched) ===== */
 @media (min-width: 768px) {
