@@ -82,9 +82,13 @@ h2::after {
 /* Name Styling */
 .logo-text .name {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: var(--text-light);
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Italic Subheading */
 .logo-text .tagline {
@@ -526,124 +530,99 @@ footer {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== BASE LAYOUT ===== */
-.nav-links {
+/* === Header Layout === */
+.header-container {
   display: flex;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: var(--primary-color);
-}
-
-/* ===== LOGO STYLING ===== */
-.logo-text .name {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: var(--text-light);
-}
-
-.logo-text .tagline {
-  font-style: italic;
-  font-size: 0.5rem;
-  color: var(--text-light);
-  opacity: 0.8;
-}
-
-/* ===== HAMBURGER BUTTON ===== */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: var(--primary-color);
-  cursor: pointer;
-  z-index: 1100;
-}
-
-/* ===== SLIDE-IN CENTER MOBILE MENU ===== */
-.nav-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: white;
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  transform: scale(0);
-  opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  padding: 1rem 2rem;
+  background: #fff;
+  position: relative;
   z-index: 1000;
 }
 
-.nav-wrapper.open {
-  transform: scale(1);
-  opacity: 1;
+.logo {
+  height: 50px;
 }
 
+/* === Nav Links - Desktop === */
 .nav-links {
-  flex-direction: column;
+  display: flex;
   gap: 1.5rem;
-  text-align: center;
-  list-style: none;
-  padding: 0;
-}
-
-.nav-links li {
-  margin: 0.75rem 0;
+  align-items: center;
 }
 
 .nav-links a {
-  font-size: 1.5rem;
-  color: #000;
   text-decoration: none;
+  color: #f8f3f3;
   font-weight: 600;
-  transition: all 0.3s ease;
 }
 
-/* Hover effect for mobile nav links */
-.nav-links a:hover {
-  color: var(--primary-color);
-  background-color: rgba(0, 255, 255, 0.05);
-  padding-left: 0.75rem;
-  border-left: 3px solid var(--primary-color);
+#search-bar {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-/* ===== SLIDE DOWN ANIMATION (OPTIONAL CLASS-BASED) ===== */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* === Hamburger Style === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1101;
 }
 
-/* ===== RESPONSIVE STYLES ===== */
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Toggle animation */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* === Responsive === */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    position: relative;
-    z-index: 1101;
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
-  html,
-  body {
-    overflow-x: hidden;
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links input {
+    margin-top: 1rem;
   }
 }
 
