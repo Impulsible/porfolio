@@ -1,13 +1,14 @@
 // ========== Hamburger Menu ==========
-const menuToggle = document.getElementById('menuToggle');
-const navWrapper = document.getElementById('navWrapper');
+  const menuToggle = document.getElementById('menuToggle');
+  const navWrapper = document.getElementById('navWrapper');
 
-menuToggle.addEventListener('click', () => {
-  const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-  menuToggle.classList.toggle('active');
-  navWrapper.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(!expanded));
-});
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.classList.toggle('active');
+    navWrapper.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+  });
+
 
 // ========== Scroll to Top Button ==========
 const scrollBtn = document.getElementById("scrollTopBtn");
