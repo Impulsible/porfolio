@@ -32,7 +32,7 @@
   <script src="script/main.js" defer></script>
 </head>
 <body>
- <!-- HEADER -->
+<!-- HEADER -->
 <header class="site-header">
   <div class="logo">
     <img src="images/logo.png" alt="Henry's Logo" class="logo-img" width="50" height="50" loading="lazy">
@@ -43,9 +43,13 @@
   </div>
 
   <!-- Hamburger for mobile -->
-  <button id="menuToggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">☰</button>
+  <button id="menuToggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
 
-  <!-- Navigation menu: always visible on desktop, toggled on mobile -->
+  <!-- Navigation menu -->
   <nav class="nav-wrapper">
     <ul class="nav-links" id="navMenu">
       <li><a href="index.html" class="active">Home</a></li>
@@ -55,6 +59,7 @@
     </ul>
   </nav>
 </header>
+
 
 
   <main>
