@@ -118,3 +118,44 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error("Error loading projects:", error));
 });
+
+
+const projects = [
+  { title: "Chop Chop", category: "landing", image: "images/premium.avif", description: "Food-ordering platform for Nigerian snacks.", link: "#" },
+  { title: "Dev Portfolio", category: "portfolio", image: "images/devfolio.webp", description: "Minimal personal dev site template.", link: "#" },
+  { title: "Figma ToolKit", category: "tools", image: "images/figma-toolkit.webp", description: "UI component set for rapid prototyping.", link: "#" },
+  { title: "Lagos Tours", category: "landing", image: "images/lagos-tours.webp", description: "Landing page for a local tourism company.", link: "#" },
+  { title: "Resume Builder", category: "tools", image: "images/resume-builder.webp", description: "Interactive resume building web app.", link: "#" }
+];
+
+const projectGrid = document.getElementById("portfolioProjects");
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+function renderProjects(category) {
+  projectGrid.innerHTML = "";
+  const filtered = category === "all" ? projects : projects.filter(p => p.category === category);
+
+  filtered.forEach((project, i) => {
+    const card = document.createElement("div");
+    card.className = `project-card animate-fade delay-${i}`;
+    card.innerHTML = `
+      <img src="${project.image}" alt="${project.title} Screenshot" loading="lazy">
+      <div class="project-info">
+        <span class="project-badge">${project.category}</span>
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <a href="${project.link}" target="_blank" class="btn-secondary">View</a>
+      </div>`;
+    projectGrid.appendChild(card);
+  });
+}
+
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelector(".filter-btn.active").classList.remove("active");
+    btn.classList.add("active");
+    renderProjects(btn.dataset.filter);
+  });
+});
+
+renderProjects("all");
