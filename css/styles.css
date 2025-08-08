@@ -1160,13 +1160,14 @@ footer {
 @media (max-width: 768px) {
   .filter-buttons {
     display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 0.5rem 1rem;
+    justify-content: center;
     gap: 0.8rem;
-    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
   }
 
   .filter-buttons::-webkit-scrollbar {
