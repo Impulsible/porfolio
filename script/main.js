@@ -99,25 +99,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ========== Dynamic Project Loader ==========
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("projects.json")
-    .then(response => response.json())
-    .then(data => {
-      const projectGrid = document.getElementById("projectGrid");
-      data.forEach(project => {
-        const card = document.createElement("div");
-        card.className = "project-card";
-        card.innerHTML = `
-          <img src="${project.image}" alt="${project.title}" loading="lazy">
-          <h3>${project.title}</h3>
-          <p>${project.description}</p>
-          <a href="${project.link}" target="_blank" class="btn-secondary">View on GitHub</a>
-        `;
-        projectGrid.appendChild(card);
-      });
-    })
-    .catch(error => console.error("Error loading projects:", error));
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const response = await fetch("https://impulsible.github.io/portfolio/projects.json");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const projectGrid = document.getElementById("projectGrid");
+
+    data.forEach(project => {
+      const card = document.createElement("div");
+      card.className = "project-card";
+      card.innerHTML = `
+        <img src="${project.image}" alt="${project.title}" loading="lazy">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <a href="${project.link}" target="_blank" class="btn-secondary">View on GitHub</a>
+      `;
+      projectGrid.appendChild(card);
+    });
+  } catch (error) {
+    console.error("Error loading projects:", error);
+  }
 });
+
 
 
 const projects = [
