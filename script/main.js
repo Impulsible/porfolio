@@ -119,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => console.error("Error loading projects:", error));
 });
 
-
 const projects = [
   { title: "Chop Chop", category: "landing", image: "images/premium.avif", description: "Food-ordering platform for Nigerian snacks.", link: "#" },
   { title: "Dev Portfolio", category: "portfolio", image: "images/devfolio.webp", description: "Minimal personal dev site template.", link: "#" },
