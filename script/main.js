@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ========== Dynamic Project Loader ==========
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://impulsible.github.io/portfolio/projects.json")
+  fetch("projects.json")
     .then(response => response.json())
     .then(data => {
       const projectGrid = document.getElementById("projectGrid");
