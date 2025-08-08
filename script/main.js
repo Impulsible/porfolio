@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ========== Dynamic Project Loader ==========
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("projects.json")
+  fetch("https://impulsible.github.io/portfolio/response.json")
     .then(response => response.json())
     .then(data => {
       const projectGrid = document.getElementById("projectGrid");
@@ -159,3 +159,4 @@ filterButtons.forEach(btn => {
 });
 
 renderProjects("all");
+
