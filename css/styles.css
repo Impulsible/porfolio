@@ -859,26 +859,6 @@ h2::after {
   opacity: 0.8;
 }
 
-:root {
-  --bg-dark: #0d0d0d;
-  --primary-color: #00ffff;
-  --text-light: #ffffff;
-  --text-muted: #cccccc;
-  --accent-red: #ff3366;
-  --font-heading: 'Space Grotesk', sans-serif;
-  --font-body: 'Poppins', sans-serif;
-}
-
-/* General Reset for Portfolio Page */
-body.portfolio {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  font-family: var(--font-body);
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
 /* Section Headings */
 .portfolio-intro h1,
 .cta-section h2,
