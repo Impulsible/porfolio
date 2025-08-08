@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ========== Dynamic Project Loader ==========
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://impulsible.github.io/portfolio/response.json")
+  fetch("response.json")
     .then(response => response.json())
     .then(data => {
       const projectGrid = document.getElementById("projectGrid");
@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error("Error loading projects:", error));
 });
+
 
 const projects = [
   { title: "Chop Chop", category: "landing", image: "images/premium.avif", description: "Food-ordering platform for Nigerian snacks.", link: "#" },
