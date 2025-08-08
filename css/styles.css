@@ -1126,6 +1126,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .error {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
   .portfolio-intro h1 {
     font-size: 1.8rem;
     text-align: center;
@@ -1166,7 +1174,6 @@ footer {
     color: var(--bg-dark);
   }
 }
-
 
   .skills-section .section-title,
   .timeline-section .section-title,
