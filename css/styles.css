@@ -1156,30 +1156,36 @@ footer {
     text-align: center;
   }
 
-  /* MOBILE FILTER BUTTONS – Horizontal Scroll */
+  /* MOBILE FILTER BUTTONS */
 @media (max-width: 768px) {
   .filter-buttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 0.8rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 0.5rem 1rem;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .filter-buttons::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+    padding: 1rem;
+    text-align: center;
   }
 
   .filter-btn {
-    flex: 0 0 auto;
-    white-space: nowrap;
+    flex: 0 1 auto;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .filter-btn.active,
+  .filter-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
   }
 }
-
   .skills-section .section-title,
   .timeline-section .section-title,
   .cta-section h2 {
