@@ -1145,6 +1145,82 @@ footer {
   margin-bottom: 1rem;
 }
 
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 768px) {
+  /* General Layout Adjustments */
+  .portfolio-intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .portfolio-intro p {
+    font-size: 0.95rem;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .skills-section .section-title,
+  .timeline-section .section-title,
+  .cta-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+    font-size: 1rem;
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .project-info {
+    padding: 1rem;
+  }
+
+  .btn-secondary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Timeline adjustments */
+  .timeline {
+    padding-left: 1.2rem;
+  }
+
+  .timeline-content {
+    margin-right: 0;
+    padding-left: 1.5rem;
+  }
+
+  .timeline-date {
+    position: static;
+    text-align: left;
+    margin-bottom: 0.2rem;
+    display: inline-block;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 3rem 1rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 1.5rem;
+    font-size: 0.85rem;
+  }
+}
 
 
 
