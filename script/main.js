@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ========== Dynamic Project Loader ==========
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await fetch("projects.json");
+    const response = await fetch("http://127.0.0.1:5500/projects.json");
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
